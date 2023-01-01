@@ -20,12 +20,12 @@ export const path={
 
          //об'єкт шляхів вихідних файлів
       src:{
-            html:`${srcFolder}/*.html`,
+            html:`${srcFolder}/*.pug`,  // .html
             files:`${srcFolder}/files/**/*.*`,
          },
          // об'єкт шляхів спостереження
       watch:{
-            html:`${srcFolder}/**/*.html`,
+            html:`${srcFolder}/**/*.pug`, //.html
             files:`${srcFolder}/files/**/*.*`,
          },
 
