@@ -2,11 +2,14 @@
   "name": "my_work_file",
   "version": "1.0.0",
   "description": "",
-  "main": "gulpfile.js", 
-  "type":"module",
+  "main": "gulpfile.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "\"SVG\"",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^4.0.2"
+  }
 }
