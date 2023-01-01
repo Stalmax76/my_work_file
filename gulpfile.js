@@ -4,10 +4,14 @@ import gulp from "gulp";
            //імпортуємо шляхи
 import {path} from "./gulp/config/path.js";
 
+//імпорт загальних плагінів
+import { plugins } from "./gulp/config/plugins.js";
+
 // глобальна зміна для збереження основних даних
 global.app = {
    path:path,
-   gulp:gulp
+   gulp:gulp,
+   plugins:plugins
 }
 
 //імпортування завдань
