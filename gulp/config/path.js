@@ -14,15 +14,18 @@ export const path={
                      // об'єкти 
          //об'єкт шляхів готового результату
       build:{
+            html:`${buildFolder}/`,
             files:`${buildFolder}/files/`
          },
 
          //об'єкт шляхів вихідних файлів
       src:{
+            html:`${srcFolder}/*.html`,
             files:`${srcFolder}/files/**/*.*`,
          },
          // об'єкт шляхів спостереження
       watch:{
+            html:`${srcFolder}/**/*.html`,
             files:`${srcFolder}/files/**/*.*`,
          },
 
