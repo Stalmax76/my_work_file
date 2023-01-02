@@ -1,0 +1,28 @@
+.no-webp main {
+  background-image: url("../img/20220903_135233.jpg") 0 0 no-repeat; }
+
+main {
+  z-index: 5;
+}
+
+header {
+  height: 200px;
+  background-color: rgb(232, 221, 17);
+  display: block;
+}
+
+header span {
+  color: green;
+}
+
+@media (max-width: 768px) {
+  main {
+    background-color: green;
+  }
+
+  main h1 {
+    font-size: 48px;
+  }
+}
+
+.webp main { background-image: url(../img/20220903_135233.webp) 0 0 no-repeat; }
