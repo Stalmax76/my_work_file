@@ -14,6 +14,7 @@ export const path={
                      // об'єкти 
          //об'єкт шляхів готового результату
       build:{
+         js: `${buildFolder}/js/`,
          css: `${buildFolder}/css/`,
             html:`${buildFolder}/`,
             files:`${buildFolder}/files/`
@@ -21,12 +22,14 @@ export const path={
 
          //об'єкт шляхів вихідних файлів
       src:{
+         js:`${srcFolder}/js/app.js`,
          scss:`${srcFolder}/scss/style.scss`,
             html:`${srcFolder}/*.html`,
             files:`${srcFolder}/files/**/*.*`,
          },
          // об'єкт шляхів спостереження
       watch:{
+         js: `${srcFolder}/js/**/*.js`,
          scss: `${srcFolder}/scss/**/*.scss`,
             html:`${srcFolder}/**/*.html`,
             files:`${srcFolder}/files/**/*.*`,
