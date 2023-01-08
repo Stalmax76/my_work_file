@@ -23,6 +23,7 @@ import {scss} from "./gulp/tasks/scss.js";
 import { js } from "./gulp/tasks/js.js";
 import { images } from "./gulp/tasks/images.js";
 import { otfToTtf, ttfToWoff, fontsStyle} from "./gulp/tasks/fonts.js";
+import { svgSprive } from "./gulp/tasks/svgSprive.js";
 
 //спостережувач за змінами в файлах
 function watcher(){
@@ -32,6 +33,9 @@ function watcher(){
    gulp.watch(path.watch.js, js);
    gulp.watch(path.watch.images, images);
 }
+
+// виконується тільки один раз, немає необхідності перезапускати
+export {svgSprive};
 
 // змінна з послідовним виконанням завдань для шрифту
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
