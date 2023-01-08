@@ -30,3 +30,4 @@ export const images = () =>{
 
    .pipe(app.plugins.browsersync.stream()); // оновлюєм браузер
 }
+

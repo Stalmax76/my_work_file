@@ -16,7 +16,7 @@ header {
 }
 
 .no-webp main {
-  background: url("../images/20220903_135233.jpg") center 0 no-repeat; }
+  background: url("../img/20220903_135233.jpg") center 0 no-repeat; }
 
 main {
   -webkit-box-flex: 1;
@@ -42,4 +42,4 @@ footer {
   }
 }
 
-.webp main { background: url(../images/20220903_135233.webp) center 0 no-repeat; }
+.webp main { background: url(../img/20220903_135233.webp) center 0 no-repeat; }
