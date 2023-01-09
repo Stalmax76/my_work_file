@@ -9,6 +9,8 @@ import { plugins } from "./gulp/config/plugins.js";
 
 // глобальна зміна для збереження основних даних
 global.app = {
+   isBuild: process.argv.includes('--build'),//якщо є ярлик - то це режим продакшн
+   isDev: !process.argv.includes('--build'),// якщо немає ярлику -то це режим розробника
    path:path,
    gulp:gulp,
    plugins:plugins
@@ -45,6 +47,11 @@ const mainTasks = gulp.series(fonts, gulp.parallel(copy,html, scss, js, images))
 
 //побудова сценаріїв для виконання задач series() - виконує завдання послідовно
 const dev = gulp.series( reset, mainTasks, gulp.parallel( watcher, server));  //спочатку копіюєм а потім спостерігаєм
+const build = gulp.series(reset, mainTasks); //завдання для режиму продакшн
+
+// єкспорт сценаріїв
+export{ dev }
+export { build }
 
 //запуск виконання завдань за замовченням
 gulp.task('default', dev);

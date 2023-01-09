@@ -3,6 +3,7 @@ import plumber from "gulp-plumber"; // обробка помилок
 import notify from "gulp-notify";// сповіщення та підказки
 import browsersync from "browser-sync"; //локальний сервер
 import newer from "gulp-newer";  //перевірка оновлень, обробляє тільки ті картинки яких немає в папці з результатом
+import ifPlugin from "gulp-if"; // умовне розділення
 
 //збераєм об'єкт
 export const plugins ={
@@ -10,5 +11,6 @@ export const plugins ={
    plumber: plumber,
    notify: notify,
    browsersync: browsersync,
-   newer: newer
+   newer: newer,
+   if: ifPlugin
 }
