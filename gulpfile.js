@@ -26,6 +26,7 @@ import { js } from "./gulp/tasks/js.js";
 import { images } from "./gulp/tasks/images.js";
 import { otfToTtf, ttfToWoff, fontsStyle} from "./gulp/tasks/fonts.js";
 import { svgSprive } from "./gulp/tasks/svgSprive.js";
+import { zip } from "./gulp/tasks/zip.js";
 
 //спостережувач за змінами в файлах
 function watcher(){
@@ -48,10 +49,12 @@ const mainTasks = gulp.series(fonts, gulp.parallel(copy,html, scss, js, images))
 //побудова сценаріїв для виконання задач series() - виконує завдання послідовно
 const dev = gulp.series( reset, mainTasks, gulp.parallel( watcher, server));  //спочатку копіюєм а потім спостерігаєм
 const build = gulp.series(reset, mainTasks); //завдання для режиму продакшн
+const deployZip = gulp.series(reset, mainTasks, zip);
 
 // єкспорт сценаріїв
 export{ dev }
 export { build }
+export { deployZip }
 
 //запуск виконання завдань за замовченням
 gulp.task('default', dev);
