@@ -47,5 +47,5 @@ export const path={
       buildFolder: buildFolder,// папка з результатом
       srcFolder: srcFolder,    // папка з вихідними файлами
       rootFolder: rootFolder,// ім'я поточного проєкту
-      ftp: `#`//шлях на віддалений сервер
+      ftp: `test`//шлях на віддалений сервер
 }

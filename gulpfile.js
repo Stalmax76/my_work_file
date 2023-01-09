@@ -27,14 +27,15 @@ import { images } from "./gulp/tasks/images.js";
 import { otfToTtf, ttfToWoff, fontsStyle} from "./gulp/tasks/fonts.js";
 import { svgSprive } from "./gulp/tasks/svgSprive.js";
 import { zip } from "./gulp/tasks/zip.js";
+import { ftp } from "./gulp/tasks/ftp.js";
 
 //спостережувач за змінами в файлах
 function watcher(){
-   gulp.watch(path.watch.files, copy);
-   gulp.watch(path.watch.html, html);
-   gulp.watch(path.watch.scss, scss);
-   gulp.watch(path.watch.js, js);
-   gulp.watch(path.watch.images, images);
+   gulp.watch(path.watch.files, copy);//  copy - замінити на gulp.series(copy, ftp) для миттєвої зміни на віддаленому сервері
+   gulp.watch(path.watch.html, html);  //  html - замінити на gulp.series(html, ftp) для миттєвої зміни на віддаленому сервері
+   gulp.watch(path.watch.scss, scss);//  scss - замінити на gulp.series(scss, ftp) для миттєвої зміни на віддаленому сервері
+   gulp.watch(path.watch.js, js);//  js - замінити на gulp.series(js, ftp) для миттєвої зміни на віддаленому сервері
+   gulp.watch(path.watch.images, images);//  images - замінити на gulp.series(images, ftp) для миттєвої зміни на віддаленому сервері
 }
 
 // виконується тільки один раз, немає необхідності перезапускати
@@ -50,11 +51,13 @@ const mainTasks = gulp.series(fonts, gulp.parallel(copy,html, scss, js, images))
 const dev = gulp.series( reset, mainTasks, gulp.parallel( watcher, server));  //спочатку копіюєм а потім спостерігаєм
 const build = gulp.series(reset, mainTasks); //завдання для режиму продакшн
 const deployZip = gulp.series(reset, mainTasks, zip);
+const deployFTP = gulp.series(reset, mainTasks, ftp);
 
 // єкспорт сценаріїв
 export{ dev }
 export { build }
 export { deployZip }
+export { deployFTP }
 
 //запуск виконання завдань за замовченням
 gulp.task('default', dev);
